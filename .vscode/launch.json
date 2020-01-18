@@ -7,7 +7,9 @@
         {
             "type": "browser-preview",
             "name": "Browser Preview: Attach",
-            "request": "attach"
+            "request": "attach",
+            "url": "https://www.google.com"
+
         },
         {
             "type": "browser-preview",
