@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+    before_action :find_item, only: [:show, :edit, :update, :destroy]
     def index
         @items = Item.all.order("created_at DESC")
     end
@@ -6,7 +7,10 @@ class ItemsController < ApplicationController
     def new
         @item = Item.new
     end
-   
+   def show
+    
+   end
+
     def create
         @item = Item.new(item_params)
         if @item.save
@@ -20,8 +24,8 @@ class ItemsController < ApplicationController
     def item_params
         params.require(:item).permit(:title, :description)
     end
-    
-   
-    
+    def find_item
+        @item = Item.find(params[:id])
+    end
     
 end
