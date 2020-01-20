@@ -8,6 +8,8 @@
 
     <div class="col-sm-4 col-sm-offset-4">
         <%= link_to "Back", root_path%>
+        <%= link_to "Edit", edit_item_path(@item)%>
+        <%= link_to "Delete", item_path(@item), method: :delete, data: {confirm: "Are You Sure?"}%>
     </div>
     
 </div>
